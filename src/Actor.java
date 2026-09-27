@@ -2,10 +2,10 @@ public class Actor {
 
     private String name;
     private String surname;
-    private String gender;
+    private Gender gender;
     private String height;
 
-    public Actor(String name, String surname, String gender, String height) {
+    public Actor(String name, String surname, Gender gender, String height) {
         this.name = name;
         this.surname = surname;
         this.gender = gender;
@@ -28,11 +28,11 @@ public class Actor {
         this.surname = surname;
     }
 
-    public String getGender() {
+    public Gender getGender() {
         return gender;
     }
 
-    public void setGender(String gender) {
+    public void setGender(Gender gender) {
         this.gender = gender;
     }
 
