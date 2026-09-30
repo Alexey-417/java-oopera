@@ -1,17 +1,8 @@
 public class Director extends Actor {
+    int numberOfShows;
 
-    private int numberOfShows;
-
-    public Director(String name, String surname, String gender, String height, int numberOfShows) {
-        super(name, surname, gender, height);
-        this.numberOfShows = numberOfShows;
-    }
-
-    public int getNumberOfShows() {
-        return numberOfShows;
-    }
-
-    public void setNumberOfShows(int numberOfShows) {
+    public Director(Gender gender, double height, String name, String surname, int numberOfShows) {
+        super(gender, height, name, surname);
         this.numberOfShows = numberOfShows;
     }
 }
