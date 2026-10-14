@@ -1,6 +1,6 @@
 public class Person {
-    private Gender gender;
-    private double height;
+    protected Gender gender;
+    protected double height;
 
     Person (Gender gender, double height) {
         this.gender = gender;

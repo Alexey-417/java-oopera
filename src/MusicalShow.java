@@ -9,4 +9,8 @@ public class MusicalShow extends Show {
         this.musicAuthor = musicAuthor;
         this.librettoText = librettoText;
     }
+
+public String printLibrettoText() {
+        return librettoText;
+}
 }
