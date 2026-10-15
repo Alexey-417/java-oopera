@@ -4,13 +4,42 @@ public class Show {
     private String title;
     private double duration;
     private Director director;
-    private ArrayList<Actor> listOfActor;
+    private ArrayList<Actor> listOfActors;
 
-    public Show(String title, double duration, Director director, ArrayList<Actor> listOfActor) {
+    public Show(String title, double duration, Director director) {
         this.title = title;
         this.duration = duration;
         this.director = director;
-        this.listOfActor = listOfActor;
+        this.listOfActors = new ArrayList<>();
+    }
+
+    public void printListOfActors() { // печатаем список актёров.
+        System.out.println(listOfActors);
+    }
+
+    public void addAnActor(Actor actor) { // добавляем актёра.
+       if (listOfActors.isEmpty()) {
+           listOfActors.add(actor);
+       } else {
+           if (listOfActors.contains(actor)) {
+               System.out.println("Такой актёр уже есть в списке.");
+           } else {
+               listOfActors.add(actor);
+               System.out.println("Актёр добавлен в список");
+           }
+       }
+    }
+
+    public void replaceActor(Actor actor, String lastName) { //заменяем актёра в списке на другого.
+        for (Actor i:listOfActors) {
+            if (lastName.equals(i.getSurname())) {
+                listOfActors.remove(i);
+                listOfActors.add(actor);
+                System.out.println("Актёр " + lastName + " был заменён на актёра " + actor);
+            } else {
+                System.out.println(lastName + " - -такого актёра нет в списке.");
+            }
+        }
     }
 
     public String getTitle() {
@@ -37,11 +66,11 @@ public class Show {
         this.director = director;
     }
 
-    public ArrayList<Actor> getListOfActor() {
-        return listOfActor;
+    public ArrayList<Actor> getListOfActors() {
+        return listOfActors;
     }
 
-    public void setListOfActor(ArrayList<Actor> listOfActor) {
-        this.listOfActor = listOfActor;
+    public void setListOfActor(ArrayList<Actor> listOfActors) {
+        this.listOfActors = listOfActors;
     }
 }
