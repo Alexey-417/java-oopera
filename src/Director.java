@@ -1,6 +1,4 @@
-import java.util.Objects;
-
-public class Director extends Actor {
+public class Director extends Person {
     protected int numberOfShows;
 
     public Director(Gender gender, double height, String name, String surname, int numberOfShows) {

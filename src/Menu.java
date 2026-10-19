@@ -1,4 +1,4 @@
-import java.util.Scanner;
+/*import java.util.Scanner;
 
 public class Menu {
     private int team;
@@ -34,4 +34,4 @@ public void teamwork() {
             default : System.out.println("Такой команды нет.");
         }
 }
-}
+}*/
