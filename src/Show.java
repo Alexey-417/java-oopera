@@ -20,25 +20,32 @@ public class Show {
     public void addAnActor(Actor actor) { // добавляем актёра.
        if (listOfActors.isEmpty()) {
            listOfActors.add(actor);
+           System.out.println(actor + " добавлен в список");
        } else {
            if (listOfActors.contains(actor)) {
-               System.out.println("Такой актёр уже есть в списке.");
+               System.out.println(actor + " - уже есть в списке.");
            } else {
                listOfActors.add(actor);
-               System.out.println("Актёр добавлен в список");
+               System.out.println(actor + " добавлен в список");
            }
        }
     }
 
-    public void replaceActor(Actor actor, String lastName) { //заменяем актёра в списке на другого.
+    public void replaceActor(Actor actor, String surname) { //заменяем актёра в списке на другого.
+        boolean presenceActor = true;
+
         for (Actor i:listOfActors) {
-            if (lastName.equals(i.getSurname())) {
-                listOfActors.remove(i);
-                listOfActors.add(actor);
-                System.out.println("Актёр " + lastName + " был заменён на актёра " + actor);
-            } else {
-                System.out.println(lastName + " - -такого актёра нет в списке.");
+            presenceActor = surname.equals(i.getSurname());
+
+            if (presenceActor == true) {
+                    listOfActors.remove(i);
+                    listOfActors.add(actor);
+                    System.out.println("Актёр " + surname + " был заменён на " + actor);
+                }
             }
+
+        if (presenceActor == false) {
+            System.out.println(surname + " - такого актёра нет в списке.");
         }
     }
 
