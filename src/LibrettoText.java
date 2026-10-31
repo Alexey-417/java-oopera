@@ -5,8 +5,4 @@ public class LibrettoText {
         this.text = text;
     }
 
-    /*@Override
-    public String toString(){
-        return text;
-    }*/
 }

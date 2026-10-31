@@ -4,6 +4,7 @@ public class Theatre {
         Actor actor1 = new Actor(Gender.MALE, 174, "Николай", "Просяной");
         Actor actor2 = new Actor(Gender.FEMALE, 150, "Лена", "Медная");
         Actor actor3 = new Actor(Gender.MALE, 220, "Иван", "Зубков");
+        Actor actor4 = new Actor(Gender.MALE, 20, "Ив", "Зуб");
         Director director1 = new Director(Gender.MALE, 162, "Денис", "Кривой", 0);
         Director director2 = new Director(Gender.FEMALE, 191, "Юля", "Свинарёва", 9);
         MusicAuthor musicAuthor1 = new MusicAuthor(Gender.MALE, 182, "Руслан", "Головенько");
@@ -75,10 +76,27 @@ public class Theatre {
         ballet.addAnActor(actor3);
         System.out.println("-".repeat(120));
 
-        //выводим списки актёров
+        /* выводим списки актёров
+        В задании ничего не сказано о выводе режисёров:
+        Внутри метода main вам нужно выполнить следующие действия:
+        Создать трёх актеров и двух режиссёров. Также создайте одного автора музыки и одного хореографа
+        Создать три спектакля: обычный, оперный и балет
+        Распределить актёров по спектаклям. Используйте для этого метод добавления нового актёра в спектакль. Один актёр может участвовать в нескольких спектаклях.
+
+        !!!!Для каждого спектакля выведите на экран список актёров.!!!!
+
+        Замените актёра в одном из спектаклей на актёра из другого спектакля и ещё раз выведите для него список актёров.
+        Попробуйте заменить в другом спектакле несуществующего актёра
+        Для оперного и балетного спектакля выведите на экран текст либретто.
+        На этом всё!
+         */
+
         show.printListOfActors();
+        show.printDirector();
         opera.printListOfActors();
+        opera.printDirector();
         ballet.printListOfActors();
+        ballet.printDirector();
         System.out.println("-".repeat(120));
 
         //меняем актёра в баллете и выводим новый список актёров

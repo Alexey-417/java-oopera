@@ -17,6 +17,10 @@ public class Show {
         System.out.println(listOfActors);
     }
 
+    public void printDirector() { //печатаем режисёра спектакля
+        System.out.println(director);
+    }
+
     public void addAnActor(Actor actor) { // добавляем актёра.
        if (listOfActors.isEmpty()) {
            listOfActors.add(actor);
@@ -33,18 +37,23 @@ public class Show {
 
     public void replaceActor(Actor actor, String surname) { //заменяем актёра в списке на другого.
         boolean presenceActor = true;
+        int index = 0;
 
         for (Actor i:listOfActors) {
             presenceActor = surname.equals(i.getSurname());
 
             if (presenceActor == true) {
-                    listOfActors.remove(i);
-                    listOfActors.add(actor);
-                    System.out.println("Актёр " + surname + " был заменён на " + actor);
-                }
+                break;
+            } else {
+                index += 1;
             }
+        }
 
-        if (presenceActor == false) {
+        if (presenceActor == true) {
+            listOfActors.remove(index);
+            listOfActors.add(index, actor);
+            System.out.println("Актёр " + surname + " был заменён на " + actor);
+        } else {
             System.out.println(surname + " - такого актёра нет в списке.");
         }
     }
